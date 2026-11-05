@@ -1,0 +1,49 @@
+{
+  "name": "image-converter",
+  "version": "0.1.0",
+  "description": "Desktop app that batch-converts images in a folder using sharp",
+  "main": "./out/main/index.js",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "heic-decode": "^2.1.0",
+    "p-limit": "^3.1.0",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "autoprefixer": "^10.4.20",
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "postcss": "^8.4.47",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.80.0",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.0",
+    "vite": "^8.3.6",
+    "vitest": "^4.1.12"
+  },
+  "build": {
+    "appId": "com.example.imageconverter",
+    "productName": "Image Converter",
+    "files": [
+      "out/**"
+    ],
+    "asarUnpack": [
+      "**/node_modules/sharp/**",
+      "**/node_modules/@img/**"
+    ]
+  }
+}

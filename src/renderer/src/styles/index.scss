@@ -1,0 +1,40 @@
+@use 'variables' as v;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: v.$font-stack;
+  background: v.$bg-light;
+  color: v.$text-light;
+
+  @media (prefers-color-scheme: dark) {
+    background: v.$bg-dark;
+    color: v.$text-dark;
+  }
+}
+
+.card {
+  border-radius: v.$radius;
+  border: 1px solid v.$border-light;
+  padding: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: v.$border-dark;
+  }
+}
+
+.progress-bar {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: v.$border-light;
+  overflow: hidden;
+
+  &__fill {
+    height: 100%;
+    background: v.$accent;
+    transition: width 0.15s ease;
+  }
+}
